@@ -1,0 +1,7 @@
+repo:
+  url: git@github.com:cieplak/daemon-ci.git
+
+steps:
+  - name:   Package build artifact
+    jail:   base
+    script: package.sh

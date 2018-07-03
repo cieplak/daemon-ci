@@ -1,0 +1,82 @@
+name:        daemon-ci
+version:     0.1.0.0
+github:      "cieplak/daemon-ci"
+license:     BSD2
+author:      "patrick cieplak"
+maintainer:  "patrick.cieplak@gmail.com"
+copyright:   "patrick cieplak 2018"
+description: <https://github.com/cieplak/daemon-ci#README.md>
+
+extra-source-files:
+  - README.md
+
+dependencies:
+
+  - base
+  - protolude
+  - mtl
+  - async
+
+  - parsec
+  - lens
+  - lens-aeson
+  - aeson
+  - aeson-pretty
+
+  - text
+  - bytestring
+  - base64-bytestring
+
+  - containers
+  - unordered-containers
+  - vector
+
+  - uuid
+  - time
+
+  - unix
+  - process
+  - directory
+
+  - cryptonite
+  - memory
+
+  - http-client
+  - http-conduit
+
+  - wai
+  - warp
+  - http-types
+  - case-insensitive
+
+  - yaml
+
+library:
+  source-dirs: src
+
+executables:
+
+  dci:
+    main:        Main
+    source-dirs: .
+    ghc-options:
+    - -fwarn-unused-imports
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - daemon-ci
+
+  spec:
+    main:        Spec
+    source-dirs: test
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - daemon-ci
+      - hspec
+      - QuickCheck
+      - doctest
+
