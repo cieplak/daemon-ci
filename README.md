@@ -18,12 +18,13 @@ deploying software on FreeBSD-based systems
 
 - [ ] /repos
 - [ ] /webhooks
+
 - [ ] /builds
-- [ ] /tests
 - [ ] /artifacts
+
 - [ ] /deploys
 - [ ] /hosts
-- [ ] /pipelines
+
 - [ ] /users
 - [ ] /notifications
 
