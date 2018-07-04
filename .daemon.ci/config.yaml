@@ -1,7 +1,29 @@
-repo:
-  url: git@github.com:cieplak/daemon-ci.git
+---
+
+jails:
+
+  - name : nginx
+    exec : jails/nginx.sh
+
+  - name : postgres
+    exec : jails/postgres.sh
+
+  - name : postgrest
+    exec : jails/postgrest.sh
+
+  - name : api
+    exec : jails/api.sh
+
+  - name : tester
+    exec : jails/tester.sh
 
 steps:
-  - name:   Package build artifact
-    jail:   base
-    script: package.sh
+
+  - name : Build packages
+    exec : steps/package.sh
+
+  - name : Run tests
+    exec : steps/test.sh
+
+  - name : Deploy
+    exec : steps/deploy.sh
